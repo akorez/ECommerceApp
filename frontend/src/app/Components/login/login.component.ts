@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { SharedModule } from 'src/app/common/shared/shared.module';
+import { AuthService } from './services/auth.service';
+import { LoginModel } from './models/login.model';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,9 +13,24 @@ import { SharedModule } from 'src/app/common/shared/shared.module';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  login(loginForm: any) {
-    if (loginForm.valid) {
-      console.log(loginForm.value);
+  constructor(
+    private _auth: AuthService,
+    private _toastr: ToastrService,
+    private _router: Router
+  ) {}
+  login(form: any) {
+    if (form.valid) {
+      let model = new LoginModel();
+      model.email = form.controls["email"].value;
+      model.password = form.controls["password"].value;
+
+      this._auth.login(model, res=>{
+        this._toastr.success("Login successful!");
+        localStorage.setItem("token",res.token);
+        localStorage.setItem("user", JSON.stringify(res.user));
+        this._router.navigateByUrl("/");
+      })
+
     }
   }
 }
