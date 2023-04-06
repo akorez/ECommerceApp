@@ -2,12 +2,12 @@
     <div class="col-md-3">
         <div class="card">
             <div class="card-header">
-                <h1 class="text-center">Giriş Sayfası</h1>
+                <h1 class="text-center">Login Page</h1>
             </div>
             <div class="card-body">
                 <form #loginForm="ngForm" (ngSubmit)="login(loginForm)" autocomplete="off">
                     <div class="form-group">
-                        <label for="email">Mail Adresi</label>
+                        <label for="email">Mail Address</label>
                         <input 
                             class="form-control" 
                             type="email" 
@@ -20,11 +20,11 @@
                             #email
                             [appValid]="email.validity.valid">
                         <div class="invalid-feedback">
-                            Geçerli bir mail adresi girin!
+                            Please Fill Valid Email Address!
                         </div>  
                     </div>
                     <div class="form-group mt-2">
-                        <label for="password">Şifre</label>
+                        <label for="password">Password</label>
                         <input
                           class="form-control"
                           type="password"
@@ -35,12 +35,12 @@
                           required
                           [appValid]="password.validity.valid">
                           <div class="invalid-feedback">
-                            Şifre alanı boş olamaz!
+                            Fill Password!
                           </div>
                     </div>
                     <div class="form-group mt-2">
-                        <button [disabled]="!loginForm.valid" class="btn btn-outline-primary w-100">Giriş Yap</button>
-                        <a routerLink="/register" style="float: right;">Kayıt Ol</a>
+                        <button [disabled]="!loginForm.valid" class="btn btn-outline-primary w-100">Login</button>
+                        <a routerLink="/register" style="float: right;">Sign Up</a>
                     </div>
                 </form>
             </div>

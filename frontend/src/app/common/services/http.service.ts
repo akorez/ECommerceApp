@@ -21,8 +21,8 @@ export class HttpService {
         callBack(res);
         this.spinnerService.hide();
       },
-      error: (error: HttpErrorResponse) => {
-        this.toastrService.error(error.message);
+      error: (err: HttpErrorResponse) => {
+        this.toastrService.error(err.error.message);
         this.spinnerService.hide();
       },
     });
@@ -36,8 +36,8 @@ export class HttpService {
         callBack(res);
         this.spinnerService.hide();
       },
-      error: (error: HttpErrorResponse) => {
-        this.toastrService.error(error.message);
+      error: (err: HttpErrorResponse) => {
+        this.toastrService.error(err.error.message);
         this.spinnerService.hide();
       },
     });

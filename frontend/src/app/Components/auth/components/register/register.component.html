@@ -2,12 +2,12 @@
     <div class="col-md-3">
         <div class="card">
             <div class="card-header">
-                <h1 class="text-center">Kayıt Sayfası</h1>
+                <h1 class="text-center">Register Page</h1>
             </div>
             <div class="card-body">
                 <form autocomplete="off" #registerForm="ngForm" (ngSubmit)="register(registerForm)">
                     <div class="form-group">
-                        <label for="name">Ad Soyad</label>
+                        <label for="name">Name Surname</label>
                         <input
                           type="text"
                           class="form-control"
@@ -19,11 +19,11 @@
                           required
                           minlength="3">
                         <div class="invalid-feedback">
-                            Ad soyad alanı en az 3 karakter olmalıdır!
+                            Name Surname must be at least 3 character
                         </div>
                     </div>
                     <div class="form-group mt-2">
-                        <label for="email">Mail Adresi</label>
+                        <label for="email">Mail Address</label>
                         <input
                           type="email"
                           class="form-control"
@@ -35,11 +35,11 @@
                           required
                           minlength="3">
                         <div class="invalid-feedback">
-                            Geçerli bir mail adresi yazın!
+                            Please Fill Valid Email Address!
                         </div>
                     </div>
                     <div class="form-group mt-2">
-                        <label for="password">Şifre</label>
+                        <label for="password">Password</label>
                         <input
                           type="password"
                           class="form-control"
@@ -50,12 +50,12 @@
                           [appValid]="password.validity.valid"
                           required>
                         <div class="invalid-feedback">
-                            Şifre alanı boş olamaz!
+                            Fill Password!
                         </div>
                     </div>
                     <div class="form-group mt-2">
-                        <button [disabled]="!registerForm.valid" class="btn btn-outline-success w-100">Kayıt Ol</button>
-                        <a routerLink="/login" style="float: right;">Giriş Yap</a>
+                        <button [disabled]="!registerForm.valid" class="btn btn-outline-success w-100">Register</button>
+                        <a routerLink="/login" style="float: right;">Login</a>
                     </div>
                 </form>
             </div>
