@@ -2,16 +2,16 @@
     <div class="col-md-3">
         <div class="card">
             <div class="card-header">
-                <h1 class="text-center">Register Page</h1>
+                <h1 class="text-center">Kayıt Sayfası</h1>
             </div>
             <div class="card-body">
                 <form autocomplete="off" #registerForm="ngForm" (ngSubmit)="register(registerForm)">
                     <div class="form-group">
-                        <label for="name">Name - Surname</label>
+                        <label for="name">Ad Soyad</label>
                         <input
                           type="text"
                           class="form-control"
-                          NgModel
+                          [(ngModel)]="model.name"
                           name="name"
                           id="name"
                           #name
@@ -19,15 +19,15 @@
                           required
                           minlength="3">
                         <div class="invalid-feedback">
-                            Name - Surname must be at least 3 characters
+                            Ad soyad alanı en az 3 karakter olmalıdır!
                         </div>
                     </div>
                     <div class="form-group mt-2">
-                        <label for="email">Mail Addres</label>
+                        <label for="email">Mail Adresi</label>
                         <input
                           type="email"
                           class="form-control"
-                          NGModel
+                          [(ngModel)]="model.email"
                           name="email"
                           id="email"
                           #email
@@ -35,7 +35,7 @@
                           required
                           minlength="3">
                         <div class="invalid-feedback">
-                            Please fill valid email address
+                            Geçerli bir mail adresi yazın!
                         </div>
                     </div>
                     <div class="form-group mt-2">
@@ -43,19 +43,19 @@
                         <input
                           type="password"
                           class="form-control"
-                          NgModel
+                          [(ngModel)]="model.password"
                           name="password"
                           id="password"
                           #password
                           [appValid]="password.validity.valid"
                           required>
                         <div class="invalid-feedback">
-                            Fill passwrod
+                            Şifre alanı boş olamaz!
                         </div>
                     </div>
                     <div class="form-group mt-2">
-                        <button [disabled]="!registerForm.valid" class="btn btn-outline-success w-100">Sign Up </button>
-                        <a routerLink="/login" style="float: right;">Login</a>
+                        <button [disabled]="!registerForm.valid" class="btn btn-outline-success w-100">Kayıt Ol</button>
+                        <a routerLink="/login" style="float: right;">Giriş Yap</a>
                     </div>
                 </form>
             </div>

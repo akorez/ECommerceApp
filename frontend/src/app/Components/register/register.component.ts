@@ -11,4 +11,7 @@ import { SharedModule } from 'src/app/common/shared/shared.module';
 })
 export class RegisterComponent {
 
+  register(model:any){
+
+  }
 }

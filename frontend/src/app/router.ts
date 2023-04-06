@@ -3,11 +3,11 @@ import { Routes } from "@angular/router";
 export const routes: Routes = [
     {
         path:"login",
-        loadComponent:()=> import("./Components/login/login.component").then(c=> c.LoginComponent)
+        loadComponent:()=> import("./Components/auth/components/login/login.component").then(c=> c.LoginComponent)
     },
     {
         path:"register",
-        loadComponent:()=> import("./Components/register/register.component").then(c=> c.RegisterComponent)
+        loadComponent:()=> import("./Components/auth/components/register/register.component").then(c=> c.RegisterComponent)
     },
     {
         path:"",
