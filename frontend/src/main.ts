@@ -8,6 +8,7 @@ import { AppComponent } from './app/app.component';
 import { routes } from './app/router';
 import { ToastrModule } from 'ngx-toastr';
 import {  NgxSpinnerModule } from 'ngx-spinner';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -20,6 +21,7 @@ bootstrapApplication(AppComponent, {
         progressBar:true
       }),
       BrowserAnimationsModule,
-      NgxSpinnerModule),
+      NgxSpinnerModule,
+      SweetAlert2Module),
   ],
 });

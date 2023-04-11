@@ -16,6 +16,10 @@ export const routes: Routes = [
             {
                 path:"",
                 loadComponent:()=>import("./Components/home/home.component").then(c=>c.HomeComponent)
+            },
+            {
+                path:"categories",
+                loadComponent:()=>import("./Components/categories/categories.component").then(c=>c.CategoriesComponent)
             }
         ]
     }
