@@ -5,9 +5,10 @@ This is an e-commerce application built using Node.js, Express, Mongoose, Jwt, u
 ## Features
 
 - User authentication with JWT
-- Product catalog and browsing
-- Shopping cart management
-- Checkout and payment processing
+- Product category and browsing
+- Generic Component and Http Client in Angular
+- Bootstrap and Bootstrap Validation
+- Node.js and Express
 
 ## Requirements
 
